@@ -6,13 +6,13 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    background: linear-gradient(145deg, #FFBB94 0%, #FB9590 30%, #DC586D 70%, #A33757 100%);
     min-height: 100vh;
     overflow-y: auto;
     position: relative;
 }
 
-/* Fondo animado - CORREGIDO */
+/* Fondo animado con tus colores */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -21,27 +21,76 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+    background: radial-gradient(circle at 20% 30%, rgba(255, 187, 148, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(220, 88, 109, 0.25) 0%, transparent 35%),
+                radial-gradient(circle at 40% 80%, rgba(163, 55, 87, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 70% 20%, rgba(251, 149, 144, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 10% 60%, rgba(133, 46, 78, 0.2) 0%, transparent 35%),
+                radial-gradient(circle at 90% 40%, rgba(76, 29, 61, 0.2) 0%, transparent 40%);
 }
 
-/* Header */
+/* Decoraciones con tus colores */
+.doodle {
+    position: absolute;
+    opacity: 0.15;
+    font-size: 2.5em;
+    pointer-events: none;
+    color: #4C1D3D;
+    text-shadow: 0 0 15px rgba(220, 88, 109, 0.5);
+}
+
+.cat::before {
+    content: "🐱";
+    position: absolute;
+}
+
+.chicken::before {
+    content: "🐤";
+    position: absolute;
+}
+
+.cat.small, .chicken.small {
+    font-size: 1.5em;
+    opacity: 0.1;
+}
+
+/* Posiciones aleatorias para los doodles */
+.doodle:nth-child(1) { top: 10%; left: 5%; animation: float 8s infinite; }
+.doodle:nth-child(2) { top: 20%; right: 8%; animation: float 10s infinite; }
+.doodle:nth-child(3) { top: 70%; left: 12%; animation: float 9s infinite; }
+.doodle:nth-child(4) { bottom: 15%; right: 15%; animation: float 11s infinite; }
+.doodle:nth-child(5) { top: 50%; left: 20%; animation: float 7s infinite; }
+.doodle:nth-child(6) { bottom: 30%; right: 25%; animation: float 12s infinite; }
+.doodle:nth-child(7) { top: 85%; left: 30%; animation: float 8.5s infinite; }
+.doodle:nth-child(8) { top: 40%; right: 35%; animation: float 9.5s infinite; }
+
+/* Header con degradado suave de tus colores */
 header {
     text-align: center;
-    padding: 40px 20px;
+    padding: 50px 20px;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    background: rgba(255, 182, 193, 0.3);
-    backdrop-filter: blur(5px);
-    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(76, 29, 61, 0.5);
+    background: linear-gradient(135deg, rgba(255, 187, 148, 0.8), rgba(220, 88, 109, 0.8));
+    backdrop-filter: blur(8px);
+    margin-bottom: 30px;
     position: relative;
     z-index: 1;
+    border-bottom: 4px solid #A33757;
+    box-shadow: 0 4px 20px rgba(76, 29, 61, 0.3);
 }
 
 header h1 {
     font-size: 2.5em;
     margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
-/* Timeline - CORREGIDO */
+header p {
+    font-size: 1.2em;
+    color: #FFF5E6;
+}
+
+/* Timeline - usando tu paleta */
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -51,18 +100,18 @@ header h1 {
     z-index: 2;
 }
 
-/* Línea vertical */
+/* Línea vertical con degradado de tus colores */
 .timeline::after {
     content: '';
     position: absolute;
     width: 6px;
-    background: linear-gradient(to bottom, #ff6b6b, #ff8e8e);
+    background: linear-gradient(to bottom, #FFBB94, #FB9590, #DC586D, #A33757, #852E4E, #4C1D3D);
     top: 0;
     bottom: 0;
     left: 50%;
     margin-left: -3px;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 20px rgba(220, 88, 109, 0.6);
 }
 
 /* Contenedores de eventos */
@@ -77,19 +126,20 @@ header h1 {
 .container::after {
     content: '❤️';
     position: absolute;
-    width: 30px;
-    height: 30px;
-    right: -15px;
-    background: white;
-    border: 4px solid #ff6b6b;
+    width: 35px;
+    height: 35px;
+    right: -17px;
+    background: linear-gradient(135deg, #FFBB94, #FB9590);
+    border: 4px solid #A33757;
     top: 15px;
     border-radius: 50%;
     z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
-    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+    font-size: 18px;
+    box-shadow: 0 0 20px rgba(163, 55, 87, 0.5);
+    color: #4C1D3D;
 }
 
 .left {
@@ -101,32 +151,38 @@ header h1 {
 }
 
 .left::after {
-    right: -15px;
+    right: -17px;
 }
 
 .right::after {
-    left: -15px;
+    left: -17px;
 }
 
 /* Contenido de cada evento */
 .content {
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.9);
     position: relative;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(76, 29, 61, 0.2);
     backdrop-filter: blur(5px);
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid rgba(255, 187, 148, 0.5);
 }
 
 .content:hover {
     transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(163, 55, 87, 0.3);
+    border: 2px solid #DC586D;
 }
 
 .content h2 {
-    color: #ff6b6b;
+    color: #852E4E;
     margin-bottom: 15px;
     font-size: 1.3em;
+    border-bottom: 2px solid #FFBB94;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
 /* Marco para fotos */
@@ -134,10 +190,15 @@ header h1 {
     width: 100%;
     height: 200px;
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 15px;
     margin-bottom: 15px;
-    border: 3px solid #ffb6c1;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 4px solid #FFBB94;
+    box-shadow: 0 8px 20px rgba(163, 55, 87, 0.3);
+    transition: border-color 0.3s;
+}
+
+.photo-frame:hover {
+    border-color: #DC586D;
 }
 
 .photo-frame img {
@@ -152,95 +213,128 @@ header h1 {
 }
 
 .content p {
-    color: #666;
+    color: #4C1D3D;
     line-height: 1.6;
     font-style: italic;
+    font-weight: 500;
 }
 
 /* Evento especial de propuesta */
 .special .content {
-    background: linear-gradient(145deg, #fff9f9, #fff0f3);
-    border: 2px solid #ff8c8c;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 187, 148, 0.2));
+    border: 3px solid #DC586D;
+    animation: glow 2s infinite;
 }
 
 .proposal {
     text-align: center;
 }
 
+.proposal h3 {
+    color: #852E4E;
+    margin-bottom: 10px;
+}
+
 .empty-photo {
     width: 150px;
     height: 150px;
-    background: linear-gradient(135deg, #ffe6e6, #ffd9d9);
+    background: linear-gradient(135deg, #FFBB94, #FB9590);
     border-radius: 50%;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 4px dashed #ff6b6b;
+    border: 5px dashed #A33757;
     animation: pulse 2s infinite;
+    box-shadow: 0 0 30px rgba(220, 88, 109, 0.5);
 }
 
 .empty-photo span {
     font-size: 4em;
-    color: #ff6b6b;
+    color: #4C1D3D;
     animation: bounce 1s infinite;
+    font-weight: bold;
 }
 
 .question {
-    font-size: 1.3em;
-    color: #ff4d4d;
+    font-size: 1.4em;
+    color: #A33757;
     font-weight: bold;
     margin: 20px 0;
+    text-shadow: 0 2px 5px rgba(255, 187, 148, 0.5);
 }
 
 button {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    background: linear-gradient(45deg, #DC586D, #A33757);
     color: white;
     border: none;
-    padding: 15px 40px;
-    font-size: 1.2em;
+    padding: 15px 50px;
+    font-size: 1.3em;
+    font-weight: bold;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 8px 20px rgba(163, 55, 87, 0.6);
     margin-bottom: 10px;
+    border: 2px solid #FFBB94;
+    letter-spacing: 2px;
 }
 
 button:hover {
+    background: linear-gradient(45deg, #A33757, #4C1D3D);
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 10px 30px rgba(76, 29, 61, 0.8);
+    border: 2px solid #FB9590;
 }
 
 hr {
-    border: 1px dashed #ffb6c1;
-    margin: 20px 0;
+    border: 2px dashed #DC586D;
+    margin: 25px 0;
+    opacity: 0.5;
 }
 
-/* Footer */
+/* Footer con tus colores */
 footer {
     text-align: center;
     padding: 30px;
-    background: rgba(255, 182, 193, 0.3);
+    background: linear-gradient(135deg, #852E4E, #4C1D3D);
     backdrop-filter: blur(5px);
-    color: white;
+    color: #FFBB94;
     margin-top: 50px;
     position: relative;
     z-index: 1;
+    border-top: 4px solid #FB9590;
+    font-size: 1.2em;
+    letter-spacing: 1px;
 }
 
-/* Animaciones */
+footer p {
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Animaciones mejoradas */
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
-    70% { box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+    0% { box-shadow: 0 0 0 0 rgba(220, 88, 109, 0.6); }
+    70% { box-shadow: 0 0 0 25px rgba(220, 88, 109, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 88, 109, 0); }
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
 }
 
-/* RESPONSIVE DESIGN - IMPORTANTE PARA MÓVIL */
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(220, 88, 109, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(220, 88, 109, 0.6); }
+}
+
+/* RESPONSIVE DESIGN */
 @media screen and (max-width: 768px) {
     .timeline::after {
         left: 31px;
@@ -253,8 +347,11 @@ footer {
     }
     
     .container::after {
-        left: 16px;
+        left: 13px;
         right: auto;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
     }
     
     .right {
@@ -262,15 +359,24 @@ footer {
     }
     
     .left::after, .right::after {
-        left: 16px;
+        left: 13px;
     }
     
     header h1 {
         font-size: 1.8em;
     }
     
+    header p {
+        font-size: 1em;
+    }
+    
     .photo-frame {
         height: 180px;
+    }
+    
+    .bg-animation {
+        background: radial-gradient(circle at 20% 30%, rgba(255, 187, 148, 0.2) 0%, transparent 40%),
+                    radial-gradient(circle at 80% 70%, rgba(220, 88, 109, 0.15) 0%, transparent 45%);
     }
 }
 
@@ -281,7 +387,7 @@ footer {
     }
     
     .content {
-        padding: 15px;
+        padding: 18px;
     }
     
     .content h2 {
@@ -300,4 +406,41 @@ footer {
     .empty-photo span {
         font-size: 3em;
     }
+    
+    .question {
+        font-size: 1.2em;
+    }
+    
+    button {
+        padding: 12px 40px;
+        font-size: 1.1em;
+    }
+    
+    .doodle {
+        font-size: 2em;
+    }
+    
+    .doodle.small {
+        font-size: 1.2em;
+    }
+}
+
+/* Scrollbar personalizada con tus colores */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FFBB94;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #DC586D, #A33757);
+    border-radius: 10px;
+    border: 2px solid #FB9590;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #A33757, #4C1D3D);
 }
