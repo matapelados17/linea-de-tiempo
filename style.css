@@ -12,7 +12,7 @@ body {
     position: relative;
 }
 
-/* ========== FONDO CON PARTÍCULAS DE GATITOS Y POLLITOS ========== */
+/* ========== FONDO CON PARTÍCULAS - SOLO GATITOS NEGROS Y POLLITOS AMARILLOS ========== */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -29,35 +29,35 @@ body {
                 radial-gradient(circle at 90% 40%, rgba(76, 29, 61, 0.2) 0%, transparent 40%);
 }
 
-/* ========== GARABATITOS MÓVILES ========== */
+/* ========== SOLO GATITOS NEGROS Y POLLITOS AMARILLOS ========== */
 .doodle {
     position: absolute;
     font-size: 2.2em;
     pointer-events: none;
     z-index: -1;
     opacity: 0.25;
-    animation: floatAround 15s infinite ease-in-out;
-    filter: drop-shadow(0 0 8px rgba(220, 88, 109, 0.5));
+    animation: floatAround 18s infinite ease-in-out;
+    filter: drop-shadow(0 0 5px rgba(220, 88, 109, 0.3));
 }
 
-/* Gatitos en diferentes poses */
+/* SOLO GATITOS NEGROS */
 .cat::before {
-    content: "🐱";
+    content: "🐈⬛";
     position: absolute;
 }
 
 .cat2::before {
-    content: "😸";
+    content: "🐈⬛";
     position: absolute;
 }
 
 .cat3::before {
-    content: "😻";
+    content: "🐈⬛";
     position: absolute;
 }
 
 .cat4::before {
-    content: "🐈";
+    content: "🐈⬛";
     position: absolute;
 }
 
@@ -66,7 +66,7 @@ body {
     position: absolute;
 }
 
-/* Pollitos en diferentes poses */
+/* SOLO POLLITOS AMARILLOS (sin gallinas) */
 .chicken::before {
     content: "🐤";
     position: absolute;
@@ -82,10 +82,7 @@ body {
     position: absolute;
 }
 
-.chicken4::before {
-    content: "🐔";
-    position: absolute;
-}
+/* Eliminado chicken4 que era la gallina 🐔 */
 
 /* Tamaños variados */
 .doodle.small {
@@ -108,46 +105,37 @@ body {
     opacity: 0.3;
 }
 
-/* ========== POSICIONES Y ANIMACIONES DE LOS GARABATITOS ========== */
-/* Gatitos */
-.doodle:nth-child(1) { top: 5%; left: 2%; animation: floatAround 20s infinite; }
-.doodle:nth-child(2) { top: 15%; right: 5%; animation: floatAround 18s infinite; animation-delay: -2s; }
-.doodle:nth-child(3) { top: 45%; left: 8%; animation: floatAround 22s infinite; animation-delay: -5s; }
-.doodle:nth-child(4) { bottom: 20%; right: 12%; animation: floatAround 19s infinite; animation-delay: -3s; }
-.doodle:nth-child(5) { top: 70%; left: 15%; animation: floatAround 21s infinite; animation-delay: -7s; }
-.doodle:nth-child(6) { bottom: 35%; right: 25%; animation: floatAround 23s infinite; animation-delay: -4s; }
-.doodle:nth-child(7) { top: 85%; left: 20%; animation: floatAround 17s infinite; animation-delay: -6s; }
-.doodle:nth-child(8) { top: 25%; right: 35%; animation: floatAround 24s infinite; animation-delay: -1s; }
-.doodle:nth-child(9) { bottom: 50%; left: 30%; animation: floatAround 19s infinite; animation-delay: -8s; }
-.doodle:nth-child(10) { top: 60%; right: 45%; animation: floatAround 21s infinite; animation-delay: -3s; }
-.doodle:nth-child(11) { bottom: 70%; left: 45%; animation: floatAround 18s infinite; animation-delay: -9s; }
-.doodle:nth-child(12) { top: 40%; right: 60%; animation: floatAround 22s infinite; animation-delay: -5s; }
-.doodle:nth-child(13) { bottom: 15%; left: 55%; animation: floatAround 20s infinite; animation-delay: -2s; }
-.doodle:nth-child(14) { top: 80%; right: 70%; animation: floatAround 19s infinite; animation-delay: -7s; }
-.doodle:nth-child(15) { bottom: 85%; left: 70%; animation: floatAround 23s infinite; animation-delay: -4s; }
-.doodle:nth-child(16) { top: 95%; right: 15%; animation: floatAround 21s infinite; animation-delay: -6s; }
-.doodle:nth-child(17) { bottom: 10%; left: 85%; animation: floatAround 18s infinite; animation-delay: -1s; }
-.doodle:nth-child(18) { top: 55%; right: 85%; animation: floatAround 22s infinite; animation-delay: -8s; }
-.doodle:nth-child(19) { bottom: 45%; left: 95%; animation: floatAround 20s infinite; animation-delay: -3s; }
-.doodle:nth-child(20) { top: 30%; right: 95%; animation: floatAround 19s infinite; animation-delay: -5s; }
+/* ========== POSICIONES DE LOS GARABATITOS ========== */
+/* Gatitos negros */
+.doodle:nth-child(1) { top: 3%; left: 2%; animation: floatAround 22s infinite; }
+.doodle:nth-child(2) { top: 12%; right: 3%; animation: floatAround 19s infinite; animation-delay: -2s; }
+.doodle:nth-child(3) { top: 45%; left: 5%; animation: floatAround 24s infinite; animation-delay: -5s; }
+.doodle:nth-child(4) { bottom: 15%; right: 8%; animation: floatAround 20s infinite; animation-delay: -3s; }
+.doodle:nth-child(5) { top: 70%; left: 10%; animation: floatAround 23s infinite; animation-delay: -7s; }
+.doodle:nth-child(6) { bottom: 30%; right: 15%; animation: floatAround 21s infinite; animation-delay: -4s; }
+.doodle:nth-child(7) { top: 82%; left: 15%; animation: floatAround 18s infinite; animation-delay: -6s; }
+.doodle:nth-child(8) { top: 22%; right: 25%; animation: floatAround 25s infinite; animation-delay: -1s; }
+.doodle:nth-child(9) { bottom: 45%; left: 25%; animation: floatAround 20s infinite; animation-delay: -8s; }
+.doodle:nth-child(10) { top: 55%; right: 35%; animation: floatAround 22s infinite; animation-delay: -3s; }
 
-/* Animación más natural */
+/* Pollitos amarillos */
+.doodle:nth-child(11) { bottom: 65%; left: 35%; animation: floatAround 19s infinite; animation-delay: -9s; }
+.doodle:nth-child(12) { top: 38%; right: 45%; animation: floatAround 23s infinite; animation-delay: -5s; }
+.doodle:nth-child(13) { bottom: 12%; left: 45%; animation: floatAround 21s infinite; animation-delay: -2s; }
+.doodle:nth-child(14) { top: 75%; right: 55%; animation: floatAround 20s infinite; animation-delay: -7s; }
+.doodle:nth-child(15) { bottom: 80%; left: 55%; animation: floatAround 24s infinite; animation-delay: -4s; }
+.doodle:nth-child(16) { top: 92%; right: 10%; animation: floatAround 22s infinite; animation-delay: -6s; }
+.doodle:nth-child(17) { bottom: 8%; left: 75%; animation: floatAround 19s infinite; animation-delay: -1s; }
+.doodle:nth-child(18) { top: 48%; right: 75%; animation: floatAround 23s infinite; animation-delay: -8s; }
+.doodle:nth-child(19) { bottom: 40%; left: 85%; animation: floatAround 21s infinite; animation-delay: -3s; }
+.doodle:nth-child(20) { top: 25%; right: 90%; animation: floatAround 20s infinite; animation-delay: -5s; }
+
 @keyframes floatAround {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    25% {
-        transform: translate(15px, -15px) rotate(5deg);
-    }
-    50% {
-        transform: translate(25px, 10px) rotate(-3deg);
-    }
-    75% {
-        transform: translate(5px, 25px) rotate(8deg);
-    }
-    100% {
-        transform: translate(0, 0) rotate(0deg);
-    }
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(12px, -12px) rotate(4deg); }
+    50% { transform: translate(20px, 8px) rotate(-2deg); }
+    75% { transform: translate(4px, 20px) rotate(6deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
 }
 
 /* Header */
@@ -155,14 +143,14 @@ header {
     text-align: center;
     padding: 50px 20px;
     color: white;
-    text-shadow: 2px 2px 8px rgba(76, 29, 61, 0.5);
-    background: linear-gradient(135deg, rgba(255, 187, 148, 0.8), rgba(220, 88, 109, 0.8));
+    text-shadow: 2px 2px 8px rgba(76, 29, 61, 0.7);
+    background: linear-gradient(135deg, #DC586D, #A33757);
     backdrop-filter: blur(8px);
     margin-bottom: 30px;
     position: relative;
     z-index: 1;
-    border-bottom: 4px solid #A33757;
-    box-shadow: 0 4px 20px rgba(76, 29, 61, 0.3);
+    border-bottom: 4px solid #FFBB94;
+    box-shadow: 0 4px 20px rgba(76, 29, 61, 0.4);
 }
 
 header h1 {
@@ -247,18 +235,18 @@ header p {
 /* Contenido de cada evento */
 .content {
     padding: 25px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(76, 29, 61, 0.2);
+    box-shadow: 0 10px 30px rgba(76, 29, 61, 0.25);
     backdrop-filter: blur(5px);
     transition: transform 0.3s, box-shadow 0.3s;
-    border: 2px solid rgba(255, 187, 148, 0.5);
+    border: 2px solid #FFBB94;
 }
 
 .content:hover {
     transform: scale(1.02);
-    box-shadow: 0 15px 40px rgba(163, 55, 87, 0.3);
+    box-shadow: 0 15px 40px rgba(163, 55, 87, 0.35);
     border: 2px solid #DC586D;
 }
 
@@ -271,13 +259,10 @@ header p {
     padding-bottom: 5px;
 }
 
-/* ========== MARCO PARA FOTOS - CORREGIDO ========== */
+/* Marco para fotos */
 .photo-frame {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 200px;
-    max-height: 300px;
+    height: 220px;
     overflow: hidden;
     border-radius: 15px;
     margin-bottom: 15px;
@@ -287,7 +272,7 @@ header p {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFF5E6;
+    background-color: #FFF0E6;
 }
 
 .photo-frame:hover {
@@ -299,20 +284,6 @@ header p {
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
-    display: block;
-}
-
-/* Si la imagen es vertical (retrato) */
-.photo-frame img[style*="aspect-ratio: 3/4"],
-.photo-frame img:not([style]) {
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Para imágenes horizontales */
-.photo-frame img[style*="aspect-ratio: 4/3"],
-.photo-frame img[style*="aspect-ratio: 16/9"] {
-    object-fit: cover;
 }
 
 .photo-frame:hover img {
@@ -328,7 +299,7 @@ header p {
 
 /* Evento especial de propuesta */
 .special .content {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 187, 148, 0.2));
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(255, 187, 148, 0.2));
     border: 3px solid #DC586D;
     animation: glow 2s infinite;
 }
@@ -371,11 +342,10 @@ header p {
     text-shadow: 0 2px 5px rgba(255, 187, 148, 0.5);
 }
 
-/* ========== BOTONES DE SÍ Y NO ========== */
 .button-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     margin-top: 20px;
     flex-wrap: wrap;
 }
@@ -402,7 +372,6 @@ header p {
     border: 2px solid #FB9590;
 }
 
-/* ========== BOTÓN "NO" QUE NO FUNCIONA ========== */
 .btn-no {
     background: linear-gradient(45deg, #999999, #666666);
     color: #cccccc;
@@ -417,12 +386,11 @@ header p {
     border: 2px solid #888888;
     letter-spacing: 2px;
     opacity: 0.7;
-    pointer-events: none; /* ¡Esto hace que no funcione! */
+    pointer-events: none;
     position: relative;
     overflow: hidden;
 }
 
-/* Efecto de "tachado" */
 .btn-no::after {
     content: "🚫";
     position: absolute;
@@ -432,11 +400,6 @@ header p {
     font-size: 1.5em;
     opacity: 0.3;
     color: #ff0000;
-}
-
-.btn-no:hover {
-    transform: scale(0.98);
-    opacity: 0.6;
 }
 
 hr {
@@ -450,7 +413,6 @@ footer {
     text-align: center;
     padding: 30px;
     background: linear-gradient(135deg, #852E4E, #4C1D3D);
-    backdrop-filter: blur(5px);
     color: #FFBB94;
     margin-top: 50px;
     position: relative;
@@ -467,21 +429,21 @@ footer p {
 /* Animaciones */
 @keyframes pulse {
     0% { box-shadow: 0 0 0 0 rgba(220, 88, 109, 0.6); }
-    70% { box-shadow: 0 0 0 25px rgba(220, 88, 109, 0); }
+    70% { box-shadow: 0 0 0 20px rgba(220, 88, 109, 0); }
     100% { box-shadow: 0 0 0 0 rgba(220, 88, 109, 0); }
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    50% { transform: translateY(-12px); }
 }
 
 @keyframes glow {
-    0%, 100% { box-shadow: 0 0 20px rgba(220, 88, 109, 0.3); }
-    50% { box-shadow: 0 0 40px rgba(220, 88, 109, 0.6); }
+    0%, 100% { box-shadow: 0 0 15px rgba(220, 88, 109, 0.3); }
+    50% { box-shadow: 0 0 35px rgba(220, 88, 109, 0.6); }
 }
 
-/* Scrollbar personalizada */
+/* ========== SCROLLBAR ========== */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -501,24 +463,89 @@ footer p {
     background: linear-gradient(180deg, #A33757, #4C1D3D);
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========== RESPONSIVE - VERSIÓN CORREGIDA ========== */
+
+/* Pantallas grandes (PC) - Timeline clásico */
+@media screen and (min-width: 1025px) {
+    .timeline {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .container {
+        width: 50%;
+        padding: 10px 40px;
+    }
+    
+    .left {
+        left: 0;
+    }
+    
+    .right {
+        left: 50%;
+    }
+    
+    .photo-frame {
+        height: 220px;
+    }
+    
+    .content h2 {
+        font-size: 1.3em;
+    }
+    
+    .doodle {
+        opacity: 0.25;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .timeline {
+        max-width: 900px;
+    }
+    
+    .container {
+        width: 50%;
+        padding: 10px 35px;
+    }
+    
+    .photo-frame {
+        height: 200px;
+    }
+    
+    .content h2 {
+        font-size: 1.2em;
+    }
+    
+    .doodle {
+        opacity: 0.22;
+        font-size: 2em;
+    }
+}
+
+/* ========== CELULARES - Distribución vertical CORREGIDA ========== */
 @media screen and (max-width: 768px) {
+    /* Timeline vertical para celular */
     .timeline::after {
         left: 31px;
+        background: linear-gradient(to bottom, #FFBB94, #DC586D, #4C1D3D);
     }
     
     .container {
         width: 100%;
         padding-left: 70px;
         padding-right: 25px;
+        margin-bottom: 25px;
     }
     
     .container::after {
         left: 13px;
         right: auto;
-        width: 30px;
-        height: 30px;
+        width: 32px;
+        height: 32px;
         font-size: 16px;
+        background: linear-gradient(135deg, #FFBB94, #FB9590);
+        border: 3px solid #A33757;
     }
     
     .right {
@@ -529,20 +556,67 @@ footer p {
         left: 13px;
     }
     
-    header h1 {
-        font-size: 1.8em;
+    /* Ajustes de contenido para celular */
+    .content {
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.98);
     }
     
-    header p {
-        font-size: 1em;
+    .content h2 {
+        font-size: 1.1em;
+        color: #A33757;
     }
     
     .photo-frame {
-        min-height: 180px;
-        max-height: 250px;
+        height: 180px;
+        border-width: 3px;
     }
     
+    /* Header para celular */
+    header {
+        padding: 30px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.6em;
+    }
+    
+    header p {
+        font-size: 0.95em;
+    }
+    
+    /* Botones en celular */
+    .btn-yes, .btn-no {
+        padding: 12px 35px;
+        font-size: 1.1em;
+    }
+    
+    .button-container {
+        gap: 15px;
+    }
+    
+    .empty-photo {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .empty-photo span {
+        font-size: 3.2em;
+    }
+    
+    .question {
+        font-size: 1.2em;
+    }
+    
+    /* Footer en celular */
+    footer {
+        padding: 20px;
+        font-size: 1em;
+    }
+    
+    /* Garabatos más sutiles en celular */
     .doodle {
+        opacity: 0.18;
         font-size: 1.8em;
     }
     
@@ -554,12 +628,12 @@ footer p {
         font-size: 2.2em;
     }
     
-    .btn-yes, .btn-no {
-        padding: 12px 40px;
+    .doodle.tiny {
         font-size: 1.1em;
     }
 }
 
+/* Celulares pequeños */
 @media screen and (max-width: 480px) {
     .container {
         padding-left: 60px;
@@ -567,45 +641,56 @@ footer p {
     }
     
     .content {
-        padding: 18px;
+        padding: 15px;
     }
     
     .content h2 {
-        font-size: 1.1em;
-    }
-    
-    .photo-frame {
-        min-height: 150px;
-        max-height: 200px;
-    }
-    
-    .empty-photo {
-        width: 120px;
-        height: 120px;
-    }
-    
-    .empty-photo span {
-        font-size: 3em;
-    }
-    
-    .question {
-        font-size: 1.2em;
-    }
-    
-    .btn-yes, .btn-no {
-        padding: 10px 30px;
         font-size: 1em;
     }
     
-    .button-container {
-        gap: 15px;
+    .photo-frame {
+        height: 160px;
+    }
+    
+    .content p {
+        font-size: 0.9em;
+    }
+    
+    .empty-photo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .empty-photo span {
+        font-size: 2.8em;
+    }
+    
+    .btn-yes, .btn-no {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+    
+    header h1 {
+        font-size: 1.4em;
     }
     
     .doodle {
         font-size: 1.5em;
+        opacity: 0.15;
+    }
+}
+
+/* Aseguramos colores consistentes en todos los dispositivos */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: linear-gradient(145deg, #FFBB94 0%, #FB9590 30%, #DC586D 70%, #A33757 100%);
     }
     
-    .doodle.tiny {
-        font-size: 1em;
+    .content {
+        background: rgba(255, 255, 255, 0.98);
+    }
+    
+    .content h2 {
+        color: #852E4E;
     }
 }
