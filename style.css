@@ -1,39 +1,18 @@
-/* --- CONFIGURACIÓN GENERAL --- */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-body { 
-    background-color: #0f0f1a; /* Negro azulado profundo */
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-    margin: 0; 
-    color: #ffffff; 
-    overflow-x: hidden;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    overflow-y: auto;
+    position: relative;
 }
 
-/* --- ENCABEZADO --- */
-header { 
-    padding: 100px 20px; 
-    text-align: center; 
-    background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1a 100%); 
-    color: #ff4d6d; /* Rosa vibrante */
-    border-bottom: 1px solid rgba(255, 77, 109, 0.3);
-}
-
-header h1 { 
-    margin: 0; 
-    font-size: 3rem; 
-    letter-spacing: 2px;
-    text-shadow: 0 0 20px rgba(255, 77, 109, 0.5);
-}
-
-header p {
-    color: #8892b0;
-    font-style: italic;
-    margin-top: 10px;
-}
-
-/* --- ANIMACIÓN DE FONDO (Gatitos y Pollitos) --- */
+/* Fondo animado - CORREGIDO */
 .bg-animation {
     position: fixed;
     top: 0;
@@ -44,189 +23,281 @@ header p {
     pointer-events: none;
 }
 
-.doodle {
-    position: absolute;
-    width: 65px;
-    height: 65px;
-    opacity: 0.15; /* Sutil para no distraer */
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: floatUp 22s infinite linear;
-    bottom: -100px;
-}
-
-/* Dibujo de Gatito (SVG Blanco) */
-.cat {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5c-3.31 0-6 2.69-6 6v6c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-6c0-3.31-2.69-6-6-6z'/%3E%3Cpath d='M9 5l-2-3 2 1M15 5l2-3-2 1'/%3E%3Ccircle cx='9' cy='12' r='1' fill='white'/%3E%3Ccircle cx='15' cy='12' r='1' fill='white'/%3E%3Cpath d='M11 15h2'/%3E%3C/svg%3E");
-}
-
-/* Dibujo de Pollito (SVG Blanco) */
-.chicken {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='13' r='6'/%3E%3Cpath d='M12 9l-1 2h2l-1-2z'/%3E%3Ccircle cx='10' cy='13' r='0.5' fill='white'/%3E%3Ccircle cx='14' cy='13' r='0.5' fill='white'/%3E%3Cpath d='M11 19l-1 2M13 19l1 2M8 13h1M15 13h1'/%3E%3C/svg%3E");
-}
-
-/* Variación de posiciones y tiempos */
-.doodle:nth-child(1) { left: 5%; animation-delay: 0s; }
-.doodle:nth-child(2) { left: 25%; animation-delay: 4s; width: 50px; }
-.doodle:nth-child(3) { left: 45%; animation-delay: 8s; }
-.doodle:nth-child(4) { left: 65%; animation-delay: 2s; width: 45px; }
-.doodle:nth-child(5) { left: 85%; animation-delay: 12s; }
-.doodle:nth-child(6) { left: 15%; animation-delay: 16s; width: 55px; }
-.doodle:nth-child(7) { left: 75%; animation-delay: 6s; }
-.doodle:nth-child(8) { left: 35%; animation-delay: 10s; width: 40px; }
-
-@keyframes floatUp {
-    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    20% { opacity: 0.15; }
-    80% { opacity: 0.15; }
-    100% { transform: translateY(-115vh) rotate(360deg); opacity: 0; }
-}
-
-/* --- LÍNEA DE TIEMPO --- */
-.timeline {
+/* Header */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: rgba(255, 182, 193, 0.3);
+    backdrop-filter: blur(5px);
+    margin-bottom: 20px;
     position: relative;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 40px 0;
-}
-
-/* El eje central */
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 4px;
-    background-color: #ff4d6d;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    margin-left: -2px;
-    box-shadow: 0 0 10px rgba(255, 77, 109, 0.4);
-}
-
-.container {
-    padding: 10px 40px;
-    position: relative;
-    width: 50%;
-}
-
-.left { left: 0; }
-.right { left: 50%; }
-
-/* El punto en la línea */
-.container::after {
-    content: '';
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    right: -8px;
-    background-color: #0f0f1a;
-    border: 3px solid #ff4d6d;
-    top: 30px;
-    border-radius: 50%;
     z-index: 1;
 }
 
-.right::after { left: -8px; }
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
 
-/* --- TARJETAS DE CONTENIDO --- */
+/* Timeline - CORREGIDO */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: visible;
+    z-index: 2;
+}
+
+/* Línea vertical */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, #ff6b6b, #ff8e8e);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+/* Contenedores de eventos */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.container::after {
+    content: '❤️';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: -15px;
+    background: white;
+    border: 4px solid #ff6b6b;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 0 15px rgba(255, 107, 107, 0.3);
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.left::after {
+    right: -15px;
+}
+
+.right::after {
+    left: -15px;
+}
+
+/* Contenido de cada evento */
 .content {
     padding: 20px;
-    background-color: #1a1a2e; /* Fondo de tarjeta oscuro */
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.95);
+    position: relative;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s;
 }
 
 .content:hover {
-    transform: scale(1.03);
-    border-color: rgba(255, 77, 109, 0.5);
+    transform: scale(1.02);
 }
 
-.photo-frame {
-    background: #000;
-    padding: 8px;
-    border-radius: 12px;
+.content h2 {
+    color: #ff6b6b;
     margin-bottom: 15px;
+    font-size: 1.3em;
 }
 
-.content img {
+/* Marco para fotos */
+.photo-frame {
     width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 3px solid #ffb6c1;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-.content h2 { 
-    color: #ff4d6d; 
-    font-size: 1.1rem; 
-    margin: 0 0 10px 0; 
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
 }
 
-.content p { 
-    color: #a0a0c0; 
-    font-size: 0.95rem; 
-    line-height: 1.5;
-    margin: 0;
+.photo-frame:hover img {
+    transform: scale(1.1);
 }
 
-/* --- SECCIÓN SAN VALENTÍN --- */
+.content p {
+    color: #666;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Evento especial de propuesta */
 .special .content {
-    border: 2px dashed #ff4d6d;
-    background: rgba(255, 77, 109, 0.05);
+    background: linear-gradient(145deg, #fff9f9, #fff0f3);
+    border: 2px solid #ff8c8c;
+}
+
+.proposal {
     text-align: center;
 }
 
 .empty-photo {
-    width: 100%;
-    height: 180px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed #444;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ffe6e6, #ffd9d9);
+    border-radius: 50%;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    color: #333;
-    border-radius: 12px;
-    margin-bottom: 15px;
+    border: 4px dashed #ff6b6b;
+    animation: pulse 2s infinite;
+}
+
+.empty-photo span {
+    font-size: 4em;
+    color: #ff6b6b;
+    animation: bounce 1s infinite;
 }
 
 .question {
+    font-size: 1.3em;
+    color: #ff4d4d;
     font-weight: bold;
-    color: #ffffff;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 
 button {
-    background: #ff4d6d;
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
     color: white;
     border: none;
-    padding: 12px 30px;
+    padding: 15px 40px;
+    font-size: 1.2em;
     border-radius: 50px;
-    font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    margin-bottom: 10px;
 }
 
 button:hover {
-    background: #ff758f;
-    box-shadow: 0 0 20px rgba(255, 77, 109, 0.6);
-    transform: translateY(-2px);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
 
-footer { 
-    text-align: center; 
-    padding: 60px; 
-    color: #444; 
-    font-size: 0.8rem; 
+hr {
+    border: 1px dashed #ffb6c1;
+    margin: 20px 0;
 }
 
-/* --- ADAPTACIÓN MÓVIL --- */
-@media screen and (max-width: 600px) {
-    .timeline::after { left: 31px; }
-    .container { width: 100%; padding-left: 70px; padding-right: 25px; }
-    .container::after { left: 23px; }
-    .right { left: 0%; }
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: rgba(255, 182, 193, 0.3);
+    backdrop-filter: blur(5px);
+    color: white;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.4); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* RESPONSIVE DESIGN - IMPORTANTE PARA MÓVIL */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .container::after {
+        left: 16px;
+        right: auto;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+    .left::after, .right::after {
+        left: 16px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .photo-frame {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding-left: 60px;
+        padding-right: 15px;
+    }
+    
+    .content {
+        padding: 15px;
+    }
+    
+    .content h2 {
+        font-size: 1.1em;
+    }
+    
+    .photo-frame {
+        height: 150px;
+    }
+    
+    .empty-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .empty-photo span {
+        font-size: 3em;
+    }
 }
