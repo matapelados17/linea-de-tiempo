@@ -1,0 +1,87 @@
+body {
+    background-color: #fce4ec; /* Un rosa muy suave */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    color: #d81b60;
+}
+
+/* El eje central de la línea */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #f06292;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Contenedores de las tarjetas */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.left { left: 0; }
+.right { left: 50%; }
+
+/* Las tarjetas de contenido */
+.content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Estilo para la propuesta de San Valentín */
+.special .content {
+    border: 3px dashed #d81b60;
+    text-align: center;
+}
+
+.proposal h3 { color: #888; }
+
+.question {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #d81b60;
+}
+
+button {
+    background-color: #d81b60;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover { transform: scale(1.1); }
+
+/* Ajuste para móviles */
+@media screen and (max-width: 600px) {
+    .timeline::after { left: 31px; }
+    .container { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .right { left: 0%; }
+}
